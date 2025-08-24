@@ -44,10 +44,24 @@ The solution is designed for efficiency, calling the Azure API only at set inter
     -   `AZURE_VISION_ENDPOINT`
     -   `AZURE_VISION_KEY`
 
-### How to Run
+### How to Run the Project
+Paste the Code: Copy the entire .ipynb script (provided below) and paste it into a code cell in your Google Colab notebook.
 
-1.  From your terminal, run the main script:
-    ```bash
-    python main.py
-    ```
-2.  Press the 'q' key to exit the application.
+Update File Paths: In the if __name__ == "__main__": block, ensure the image_file and video_file paths correctly point to your files in Google Drive. For example:
+
+Python
+
+base_path = "/content/drive/My Drive/assets/" # Adjust if your assets folder is elsewhere
+image_file = os.path.join(base_path, "sample_image.jpg")
+video_file = os.path.join(base_path, "sample_video.mp4")
+Choose Your Mode:
+
+To process an image: Uncomment process_image(image_file) and ensure process_video(video_file) is commented out.
+
+To process a video: Uncomment process_video(video_file) and ensure process_image(image_file) is commented out.
+
+Run the Cell: Execute the code cell.
+
+For video processing, a new window (within Colab's output) will display the video with detections. Press 'q' on your keyboard (while the video window is active) to stop processing.
+
+For image processing, the detected image will be displayed.
